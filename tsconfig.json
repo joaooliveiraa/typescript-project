@@ -2,7 +2,8 @@
     "compilerOptions": {
         "outDir": "dist/js", /*Para onde os arquivos js compilados de TS irão */
         "target": "ES6",/*Versão da compilação*/
-        "noEmitOnError" : true /*Não irá gerar arquivo .js caso o compilador der erros*/
+        "noEmitOnError" : true, /*Não irá gerar arquivo .js caso o compilador der erros*/
+        "noImplicitAny": true /*Any não implicito vai dar erro*/
     },
     "include": ["app/**/*"] /*Aonde os arquivos ts estão*/
 }
