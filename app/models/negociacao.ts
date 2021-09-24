@@ -1,26 +1,20 @@
 export class Negociacao {
-  private _data: Date;
-  private _quantidade: number;
-  private _valor: number;
 
-  constructor(data: Date, quantidade: number, _valor: number) {
-    this._data = data;
-    this._quantidade = quantidade;
-    this._valor = _valor;
+  constructor(
+     private _data: Date,
+     private quantidade: number,
+     private valor: number) {
   }
-  get data(): Date {
-    return this._data;
-  }
-
-  get quantidade(): number {
-    return this._quantidade;
-  }
-
-  get valor(): number {
-    return this._valor;
-  }
-
+  
   get volume(): number {
-    return this._quantidade * this._valor;
+    return this.quantidade * this.valor;
+  }
+
+  get data(): Date {
+      /*Programação defensiva
+      criar uma nova instancia da data pra garantir que ela não 
+      irá ser alterada em um setDate()*/ 
+      const data = new Date(this._data.getTime())
+      return data
   }
 }
